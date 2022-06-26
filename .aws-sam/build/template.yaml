@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'python3.9
+
+  Sample SAM Template for teslabot
+
+  '
+Globals:
+  Function:
+    Timeout: 300
+    MemorySize: 1024
+Resources:
+  SentimentFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      PackageType: Image
+      Architectures:
+      - x86_64
+      Events:
+        SentimentAnalysis:
+          Type: Api
+          Properties:
+            Path: /sentiment
+            Method: get
+      ImageUri: sentimentfunction:python3.9-v1
+    Metadata:
+      DockerContext: C:\Users\camil\lambda-huggingface
+      DockerTag: python3.9-v1
+      Dockerfile: Dockerfile
+      SamResourceId: SentimentFunction
+Outputs:
+  SentimentApi:
+    Description: API Gateway endpoint URL for Prod stage for Sentiment Analysis function
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/sentiment/
+  SentimentFunction:
+    Description: Sentiment Analysis Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - SentimentFunction
+      - Arn
+  SentimentFunctionIamRole:
+    Description: Implicit IAM Role created for Sentiment Analysis function
+    Value:
+      Fn::GetAtt:
+      - SentimentFunctionRole
+      - Arn
