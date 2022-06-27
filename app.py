@@ -4,7 +4,7 @@ model_path='./model'
 classify = pipeline("sentiment-analysis", model=model_path, tokenizer=model_path)
 
 def handler(event, context):
-    #return json.dumps(event)
+    return json.dumps(event)
     body = event['body']
     queries = body['query']
     result={'result':[classify(x) for x in queries]}
