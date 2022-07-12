@@ -11,8 +11,7 @@ env:
   ECS_SERVICE: streamlit-service
   ECS_CLUSTER: fargate
   ECS_TASK_DEFINITION: streamlit/task-definition.json
-  CONTAINER_NAME: MY_CONTAINER_NAME
-                                               # containerDefinitions section of your task definition
+  CONTAINER_NAME: 681261969843.dkr.ecr.us-east-1.amazonaws.com/lambda-registry:latest
 
 jobs:
   deploy:
