@@ -21,7 +21,7 @@ def sentiment(text: str):
 def sentiment(date0: datetime.date, dateF: datetime.date, column: str):
     cols = [x for x in dfSentiment.columns if column in x]
     dfFilter = dfSentiment[(dfSentiment['timestamp'] > date0) & (dfSentiment['timestamp'] > dateF)]
-    return {'result': dfFilter[['timestamp'] + cols].to_dict('records')}
+    return {'result': dfFilter[['timestamp'] + cols].to_json(orient='records')}
 
 
 @app.get("/", tags=["Health Check"])
