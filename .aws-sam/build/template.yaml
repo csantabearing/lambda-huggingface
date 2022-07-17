@@ -17,11 +17,16 @@ Resources:
       Architectures:
       - x86_64
       Events:
-        SentimentAnalysis:
+        Root:
           Type: Api
           Properties:
-            Path: /sentiment
-            Method: post
+            Path: /
+            Method: ANY
+        NonRoot:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
       ImageUri: sentimentfunction:python3.9-v1
     Metadata:
       DockerContext: C:\Users\camil\lambda-huggingface

@@ -24,7 +24,7 @@ def the_other_handler(event, context):
     return result
 
 
-@app.post("/sentiment", tags=["Endpoint Test"])
+@app.get("/sentiment", tags=["Endpoint Test"])
 def main_endpoint_test():
     return {"message": "Welcome CI/CD Pipeline with GitHub Actions!"}
 
