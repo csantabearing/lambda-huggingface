@@ -24,9 +24,9 @@ def the_other_handler(event, context):
     return result
 
 
-@app.get("/sentiment", tags=["Endpoint Test"])
+@app.get("/", tags=["Endpoint Test"])
 def main_endpoint_test():
-    return {"message": "Welcome CI/CD Pipeline with GitHub Actions!"}
+    return {"message": "Ok"}
 
 
 handler = Mangum(app=app)
