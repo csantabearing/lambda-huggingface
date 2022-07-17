@@ -1,3 +1,7 @@
 pandas
 numpy
 transformers[torch]
+magnum
+fastapi
+pydantic
+uvicorn
