@@ -1,7 +1,7 @@
 pandas
 numpy
 transformers[torch]
-magnum
+mangum
 fastapi
 pydantic
 uvicorn
