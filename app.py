@@ -1,6 +1,7 @@
 from transformers import pipeline
 from fastapi import FastAPI
 from mangum import Mangum
+import pandas as pd
 import datetime
 import json
 
