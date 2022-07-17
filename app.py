@@ -9,7 +9,7 @@ classify = pipeline("sentiment-analysis", model=model_path, tokenizer=model_path
 app = FastAPI(title='Serverless Lambda FastAPI')
 
 
-def other_handler(event, context):
+def the_other_handler(event, context):
     body = event['body']
     queries = json.loads(body)['query']
     sentiments = {'result': [classify(x) for x in queries]}
