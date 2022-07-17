@@ -21,7 +21,7 @@ def sentiment(text: str):
 @app.get("/reddit", tags=["Tsla Bot"])
 def sentiment(date0: datetime.date, dateF: datetime.date, column: str):
     cols = [x for x in dfSentiment.columns if column in x]
-    dfFilter = dfSentiment[(dfSentiment['timestamp'] > date0) & (dfSentiment['timestamp'] > dateF)]
+    dfFilter = dfSentiment[(dfSentiment['timestamp'] > date0) & (dfSentiment['timestamp'] < dateF)]
     return {'result': dfFilter[['timestamp'] + cols].to_json(orient='records')}
 
 
