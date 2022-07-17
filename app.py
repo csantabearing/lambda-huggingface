@@ -6,7 +6,7 @@ import json
 model_path = './model'
 classify = pipeline("sentiment-analysis", model=model_path, tokenizer=model_path)
 
-app = FastAPI(title='Serverless Lambda FastAPI')
+app = FastAPI(title='Serverless Lambda FastAPI', root_path="/Prod/")
 
 
 def the_other_handler(event, context):
