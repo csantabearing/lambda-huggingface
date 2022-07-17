@@ -8,7 +8,7 @@ import json
 model_path = './model'
 classify = pipeline("sentiment-analysis", model=model_path, tokenizer=model_path)
 dfSentiment = pd.read_csv('./sentiment_data.csv')
-dfSentiment['timestamp'] = pd.to_datetime(dfSentiment['timestamp'], format='%Y-%m-%d')
+dfSentiment['timestamp'] = pd.to_datetime(dfSentiment['timestamp'], format='%Y-%m-%d').dt.date
 
 app = FastAPI(title='Serverless Lambda FastAPI', root_path="/Prod/")
 
