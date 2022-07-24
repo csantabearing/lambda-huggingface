@@ -1,7 +1,4 @@
-pandas
 numpy
 transformers[torch]
-mangum
-fastapi
-pydantic
-uvicorn
+scipy
+tritonclient[http]
