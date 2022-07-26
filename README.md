@@ -157,7 +157,7 @@ teslabot$ ssh -i triton-key.pem ec2-user@ec2.public.ipv4.address
 
 ### III.2 Deploying with Nvidia Triton server
 
-Create a env file with aws credentials:
+Create a env file with aws credentials in the ec2 server:
 
     AWS_ACCESS_KEY_ID=SOME_ACCESS_KEY
     AWS_SECRET_ACCESS_KEY=SOME_SECRET_ACCESS_KEY
