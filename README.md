@@ -25,7 +25,7 @@ There's only one tasks for this session.
 - Submit a link to your endpoint link on canvas (this link should be unique to your project).
 
 ## Background
-Please review the weekly narrative [here](https://www.notion.so/Week-4)
+Please review the weekly narrative [here](https://www.notion.so/Week-4-Analyzing-Market-Sentiment-Phase-VII-Building-a-Scalable-Solution-1a3271fcafa7494fb493e4fb11f6d2f4)
 
 
 # Nvidia Triton Server
