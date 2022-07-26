@@ -5,7 +5,7 @@
 
 
 
-# <h1 align="center" id="heading">Phase VI - Sentiment Analysis using FastAPI and AWS Lambda</h1>
+# <h1 align="center" id="heading">Phase VII - Sentiment Analysis using Nvidia Triton on EC2</h1>
 
 
 
@@ -90,9 +90,7 @@ Install the required libraries using pip
 
 To create a model compatible with Nvidia Triton server, you must run inference once with the jit compiler
 
-```bash
-teslabot$ jupyter notebook
-```
+![AWS region](/images/jupyter.png)
 
 You should see a model.pt created and you need to create a config.pbtxt that contains the input and output tensor shapes:
 
@@ -114,6 +112,7 @@ output {
 
 ```
 
+In this case, the input tensors are tokenised sentences 256 words long and the outputs are the logits for the negative/positive classes.
 
 </details>
 
@@ -127,18 +126,29 @@ output {
 
 ## III. Deploy on AWS
 
-### III.1 Launching an EC2 Instance
+### III.1 Create an S3 model repository and launch an EC2 Instance
 
 1. Make sure that you have an active AWS account
 2. Select us-east-1 as the aws region for the remaining steps of the assignment.
   ![AWS region](/images/region_aws.png)
-3. Go to [S3 storage](https://us-east-1.console.aws.amazon.com/iamv2/home#/users)
-create a new bucket clicking "Launch Instance"
+3. Go to [S3 storage](https://s3.console.aws.amazon.com/s3/home?region=us-west-1)
+create a new bucket clicking "Create Bucket" and get the 
 4. Upload the traced model with the following folder structure:
-5. Go to [EC2 instances](https://us-east-1.console.aws.amazon.com/iamv2/home#/users)
+```bash
+    models
+    └───distilbert
+        └───config.pbtxt
+        └───1
+            └───model.pt
+```
+![AWS region](/images/upload.png)
+5. Go to [EC2 instances](https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Home:)
 launch a new instance clicking "Launch Instance"
-![Add User IAM](images/add_user_iam.png)
+![Add User IAM](images/launch.png)
 6. SSH into the EC2 instance
+```bash
+teslabot$ ssh ec2-user@ec2.public.ipv4.address
+```
 
 ### III.2 Deploying with Nvidia Triton server
 
@@ -163,17 +173,20 @@ To run the inference server on CPU:
 
 ### III.3 Testing the API endpoint
 
+Run the inference client with the correct ip address
 
-
+```bash
+    python3 inference.py
+```
 
 </details>
 
 
 ### Cleanup
 
-To delete the sample application that you created, just terminate the EC2 instance:
+To delete the sample application that you created, just terminate the EC2 instance by right clicking it and selecting "Terminate Instance":
 
-
+![Add User IAM](images/launch.png)
 
 
 ### Resources
