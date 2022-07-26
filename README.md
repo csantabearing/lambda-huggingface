@@ -130,7 +130,7 @@ In this case, the input tensors are tokenised sentences 256 words long and the o
 
 1. Make sure that you have an active AWS account
 
-2. Select us-east-1 as the aws region for the remaining steps of the assignment.
+2. Select us-west-1 as the aws region for the remaining steps of the assignment.
   ![AWS region](/images/region_aws.png)
 
 3. Go to [S3 storage](https://s3.console.aws.amazon.com/s3/home?region=us-west-1)
