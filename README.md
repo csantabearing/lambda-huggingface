@@ -57,15 +57,15 @@ Follow the next tutorial to create and verify an AWS account
 Use the convenience script to install docker on linux. For more
 
 ```bash
- curl -fsSL <https://get.docker.com> -o get-docker.sh
- DRY_RUN=1 sh ./get-docker.sh
+ teslabot$ curl -fsSL <https://get.docker.com> -o get-docker.sh
+ teslabot$ DRY_RUN=1 sh ./get-docker.sh
 ```
 
 Verify that your user can run docker commandas ccan run Docker commands without using sudo.by
 running by running the following command:
 
 ```bash
-  docker ps
+ teslabot$ docker ps
 
  CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 
