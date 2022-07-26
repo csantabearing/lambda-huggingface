@@ -76,7 +76,7 @@ running by running the following command:
 Install the required libraries using pip
 
 ```bash
-   pip install -r requirements.txt
+teslabot$ pip install -r requirements.txt
 ```
  
 </details>
@@ -166,13 +166,13 @@ Create a env file with aws credentials:
 To run the inference server on GPU: 
 
 ```bash
-    docker run --gpus=1 -p8000:8000 -p8001:8001 -p8002:8002 --env-file .envs3 -p8000:8000 -p8001:8001 -p8002:8002 --rm --net=host nvcr.io/nvidia/tritonserver:22.06-py3 tritonserver --model-repository=s3://triton-repository/models/
+teslabot$ docker run --gpus=1 -p8000:8000 -p8001:8001 -p8002:8002 --env-file .envs3 -p8000:8000 -p8001:8001 -p8002:8002 --rm --net=host nvcr.io/nvidia/tritonserver:22.06-py3 tritonserver --model-repository=s3://triton-repository/models/
 ```
 
 To run the inference server on CPU: 
 
 ```bash
-    docker run -p8000:8000 -p8001:8001 -p8002:8002 --env-file .envs3 -p8000:8000 -p8001:8001 -p8002:8002 --rm --net=host nvcr.io/nvidia/tritonserver:22.06-py3 tritonserver --model-repository=s3://triton-repository/models/
+teslabot$ docker run -p8000:8000 -p8001:8001 -p8002:8002 --env-file .envs3 -p8000:8000 -p8001:8001 -p8002:8002 --rm --net=host nvcr.io/nvidia/tritonserver:22.06-py3 tritonserver --model-repository=s3://triton-repository/models/
 ```
 
 
@@ -181,7 +181,7 @@ To run the inference server on CPU:
 Run the inference client with the correct ip address
 
 ```bash
-    python3 inference.py
+teslabot$ python3 inference.py
 ```
 
 </details>
