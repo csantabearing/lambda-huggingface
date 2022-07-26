@@ -152,7 +152,7 @@ launch a new instance clicking "Launch Instance"
 
 6. SSH into the EC2 instance
 ```bash
-teslabot$ ssh ec2-user@ec2.public.ipv4.address
+teslabot$ ssh -i triton-key.pem ec2-user@ec2.public.ipv4.address
 ```
 
 ### III.2 Deploying with Nvidia Triton server
