@@ -178,7 +178,11 @@ teslabot$ docker run -p8000:8000 -p8001:8001 -p8002:8002 --env-file .envs3 -p800
 
 ### III.3 Testing the API endpoint
 
-Run the inference client with the correct ip address
+Modify the inference.py file to the EC2 instance IP:
+
+![Add User IAM](images/url.png)
+
+Run the inference client 
 
 ```bash
 teslabot$ python3 inference.py
