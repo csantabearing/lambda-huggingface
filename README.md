@@ -129,10 +129,13 @@ In this case, the input tensors are tokenised sentences 256 words long and the o
 ### III.1 Create an S3 model repository and launch an EC2 Instance
 
 1. Make sure that you have an active AWS account
+
 2. Select us-east-1 as the aws region for the remaining steps of the assignment.
   ![AWS region](/images/region_aws.png)
+
 3. Go to [S3 storage](https://s3.console.aws.amazon.com/s3/home?region=us-west-1)
-create a new bucket clicking "Create Bucket" and get the 
+create a new bucket clicking "Create Bucket"
+
 4. Upload the traced model with the following folder structure:
 ```bash
     models
@@ -142,9 +145,11 @@ create a new bucket clicking "Create Bucket" and get the
             └───model.pt
 ```
 ![AWS region](/images/upload.png)
+
 5. Go to [EC2 instances](https://us-west-1.console.aws.amazon.com/ec2/v2/home?region=us-west-1#Home:)
 launch a new instance clicking "Launch Instance"
 ![Add User IAM](images/launch.png)
+
 6. SSH into the EC2 instance
 ```bash
 teslabot$ ssh ec2-user@ec2.public.ipv4.address
@@ -186,7 +191,7 @@ Run the inference client with the correct ip address
 
 To delete the sample application that you created, just terminate the EC2 instance by right clicking it and selecting "Terminate Instance":
 
-![Add User IAM](images/launch.png)
+![Add User IAM](images/terminate.png)
 
 
 ### Resources
